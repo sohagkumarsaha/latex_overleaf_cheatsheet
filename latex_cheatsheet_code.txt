@@ -1,0 +1,142 @@
+Cheatsheet latex overleaf: 
+
+% Table automatic numbering  
+Table \ref{table1}
+
+
+
+
+% Reference numbering
+\cite{bib1}
+
+
+
+
+
+% Itemize List
+\begin{itemize}
+	\item Item1
+	\item Item2
+	\item Item3
+\end{itemize}
+
+%  Numered list 
+\begin{enumerate}
+	\item Item1 
+	\item Item2
+	\item Item3 
+end{enumerate}
+
+
+% refering sections
+Section~\ref{sec:background}
+
+\section{Background Study}
+\label{sec:background}
+
+
+% Refering figure number
+\ref{fig1} 
+
+
+% Figure
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[width=0.80\linewidth]{images/figure1.png}
+  \caption{Statistical feature selection stacking framework.}
+  \label{fig1}
+\end{figure*}
+
+
+
+% Equation numbering
+Eq. \eqref{eq:logistic1}
+
+\begin{equation}
+    f(z) = \frac{1}{1 + e^{-z}}
+    \label{eq:logistic1}
+\end{equation}
+
+
+
+% Sample Table
+
+% Table 1
+\begin{table}[htbp]
+\centering
+\caption{Major Risk Factors Behind CVD}
+\label{table1}
+\begin{tabular}{cc}
+\Xhline{2\arrayrulewidth} % Creates a double thick line
+\makecell{Controllable Factors} & \makecell{Non-controllable Factors} \\
+\hline
+Obesity                 &       Age                  \\
+Stress                  &       Gender               \\
+Eating habits           &       Genetics             \\
+Sedentary lifestyle     &       Family history       \\
+Smoking                 &       Ethnicity            \\
+\Xhline{2\arrayrulewidth} % Creates a double thick line
+\end{tabular}
+\end{table}
+
+
+
+
+% Another table reference 
+
+\ref{dataset_summary_table}.
+
+
+\begin{table}[ht]
+    \centering
+    \caption{Dataset summary.}
+    \label{dataset_summary_table}
+    \begin{tabular}{p{0.20\linewidth}| p{0.40\linewidth}| p{0.25\linewidth}}
+    \hline \hline
+      \textbf{Datasets}  & \textbf{Sources} & \textbf{Descriptions} 
+        \\ \hline
+
+        Dataset 1 & Framingham Dataset & 15 features \newline 1-Target variable \newline Categorical: 7 \newline Continuous: 8 \\
+        \hline
+        Dataset 2 & UCI Heart Disease Dataset (Combination of Cleveland, Hungary, Switzerland, and the VA Long Beach databases) & 13 features \newline 1-Target variable \newline Categorical: 6 \newline Continuous: 7 \\
+        \hline
+        Dataset 3 & The Z-Alizadeh Saini Dataset & 53 Features \newline 1-Target variable \newline Categorical: 34 \newline Continuous: 19 \\
+        
+        \hline 
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+
+
+
+
+% Algorithm refering
+\ref{alg:StackingSVM}
+
+
+% algorithm 1 
+\begin{algorithm}
+\caption{Stacking with SVM as Meta Model}
+\label{alg:StackingSVM}
+\begin{algorithmic}[1]
+\Require Training data TD
+\Ensure An ensemble stacking model M
+\State \textbf{Step 1:} Train base models on the entire training set
+\For{$k \leftarrow 1$ to $K$}
+    \State Train a model $M_k$ from TD
+\EndFor
+\State \textbf{Step 2:} Create a training set for the meta-model
+\For{$x_i$ belonging to TD}
+    \State Obtain a value $\{m_i, y_i\}$, where $m_i = \{m_1(x_i), m_2(x_i), \ldots, m_K(x_i)\}$
+\EndFor
+\State \textbf{Step 3:} Learn a meta-model
+\State Train a new model $m'$ from the pool of $\{m_i, y_i\}$
+\State \textbf{Step 4:} Return the ensemble classifier M
+\State $M(x) = m'(m_1(x), m_2(x), \ldots, m_K(x))$
+\end{algorithmic}
+\end{algorithm}
+
+
+
+% deleting initial  indent
+\noindent
