@@ -50,7 +50,7 @@ Section~\ref{sec:background}
 
 
 % Equation numbering
-Eq. \eqref{eq:logistic1}
+Eq. ~\eqref{eq:logistic1}
 
 \begin{equation}
     f(z) = \frac{1}{1 + e^{-z}}
@@ -138,5 +138,54 @@ Smoking                 &       Ethnicity            \\
 
 
 
+% Citations and Equations coloring
+
+% color and hyper link in references 
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+
+% Set color for links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % blue  % magenta
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue % blue % red
+}
+
+
+%% adding color to the brackets in the references or citations 
+\makeatletter
+\renewcommand{\@cite}[2]{\textcolor{blue}{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+
+
+% Adding color to the brackets of equation number
+\makeatletter
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+\makeatother
+
+
+
+
+
 % deleting initial  indent
-\noindent
+\noindent\
+
+
+
+% Reference auto numbering mode in IEEE templates
+
+
+%% for new reference style of auto numbering
+\bibliographystyle{unsrt}
+
+
+
+
+% Add the end before document ended
+\bibliographystyle{unsrt}
+\bibliography{reference.bib}
+
+
