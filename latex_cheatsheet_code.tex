@@ -222,3 +222,46 @@ Smoking                 &       Ethnicity            \\
 
 
 
+
+% An table formatting code (example) 
+
+
+% Table for comparison of widely used optimization algorithms 
+
+% Table spanning both columns
+\begin{table*}[htbp]
+\renewcommand\arraystretch{1.3}
+\centering
+\caption{Comparative Analysis of widely used optimization algorithms in  published works \cite{allwyn2023comprehensive, chopra2022golden}}
+\begin{tabularx}{\textwidth}{ m{3.75cm}  m{6cm}   m{7cm}  }
+%\hline
+\Xhline{2\arrayrulewidth} % Creates a double thick line
+\textbf{Name of Algorithm} & \textbf{Key Strengths} & \textbf{Shortcomings} \\ \hline
+Linear Programming & 
+Reliable and faster in terms of computational efficiency  & 
+The majority of problems in the real-world are nonlinear, and developing a linear model for them can lead to significant losses \cite{geem2001new}. \\ \hline
+
+Mixed Integer Linear Programming & 
+Guaranteed convergence of the solution with global optimum values \cite{urbanucci2018limits}. Fast and effective solvers available commercially. & 
+Optimum solution cannot be obtained if the constraints are contradictory \cite{urbanucci2018limits} and non-linear effects cannot be accounted. \\ \hline
+
+Non-linear Programming & 
+Results are more reliable as the model exactly replicates the nonlinear characteristics of the system under study. & 
+Optimal results cannot be obtained if the functions used in computation are not differentiable. Requirement for feasible starting point to obtain global optima. \cite{geem2001new}. \\ \hline
+
+Dynamic Programming & 
+The sensitivity analysis can be inferred from problem solution\cite{nelson1968dynamic}, formulation can be done based on initial value problems \cite{bellman1965dynamic}. & 
+Increase in the number of variables increases exponentially with increasing number of functions requiring more memory space \cite{geem2001new}. \\ 
+
+\Xhline{2\arrayrulewidth} % Creates a double thick line
+%\hline
+
+\end{tabularx}
+\label{table:optimization_algorithms}
+\end{table*}
+
+
+
+
+
+
