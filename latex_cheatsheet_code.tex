@@ -185,7 +185,40 @@ Smoking                 &       Ethnicity            \\
 
 
 % Add the end before document ended
-\bibliographystyle{unsrt}
+\bibliographystyle{ieeetr}
 \bibliography{reference.bib}
+
+
+% images in svg and images in pdf or png or jpg format 
+
+
+
+
+% for svg import some important libraries first
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{svg}
+
+% then write the following code to import images inn .svg format
+
+% image import code for .svg file
+ \begin{figure*}[htbp]
+  \centering
+  \includesvg[width=1.00\linewidth]{images/MG_EMS.svg}
+  \caption{Categorization of microgrid based on operation, control, config, scenarios, location, and type of sources}
+  \label{microgrid_category}
+\end{figure*}
+
+
+
+%image import code for .png or .pdf file 
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[width=1.00\linewidth]{images/MG_EMS.pdf}
+  \caption{Categorization of microgrid based on operation, control, config, scenarios, location, and type of sources}
+  \label{microgrid_category}
+\end{figure*}
+
+
 
 
