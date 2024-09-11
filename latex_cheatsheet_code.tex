@@ -265,3 +265,190 @@ Increase in the number of variables increases exponentially with increasing numb
 
 
 
+
+
+\section*{Nomenclature}
+\subsection{ABBREVIATIONS}
+\begin{description}[align=left, labelwidth=2cm, leftmargin=2cm, style=nextline, itemindent=0cm]
+    \item[\normalfont SG]   Smart grid
+    \item[\normalfont DER]  Distributed Energy Resources
+    \item[\normalfont EM]   Energy Management 
+    \item[\normalfont HIL]  Hardware-in-the-Loop
+\end{description}
+
+
+
+
+
+
+
+
+% code for libraries and essential things in ieee access template
+
+\documentclass{ieeeaccess}
+%\documentclass{IEEEtran}
+
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+
+%\usepackage{algorithm2e}
+%\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% Algorithms
+
+%\usepackage{algcompatible}
+
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{algorithm}
+%\usepackage{algorithmic} 
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{svg}
+\usepackage{animate}
+
+\usepackage{textcomp}
+\usepackage{bm}
+
+% use package for list formating
+\usepackage{enumitem}
+
+% for table
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% for table
+\usepackage{tabulary}
+\usepackage{adjustbox}
+%\usepackage{caption}
+
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{supertabular}
+
+
+%\usepackage{arydshln} % Required for double lines
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{makecell}
+\usepackage{tikz}
+
+%
+\usepackage{hyphenat}
+
+\usepackage{arydshln}
+\setlength\dashlinedash{0.4pt}
+\setlength\dashlinegap{0.8pt}
+\setlength\arrayrulewidth{0.5pt}
+
+\renewcommand{\arraystretch}{1.5}
+
+
+% Comment 
+
+\usepackage{comment}
+
+% highlight
+\usepackage{soul}
+
+% Orcid link
+\usepackage{scalerel}
+\usepackage{tikz}
+
+
+\NewSpotColorSpace{PANTONE}
+ \AddSpotColor{PANTONE} {PANTONE3015C} {PANTONE\SpotSpace 3015\SpotSpace C} {1 0.3 0 0.2}
+ \SetPageColorSpace{PANTONE}
+\usetikzlibrary{svg.path}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+ orcidlogo/.pic={
+ \fill[orcidlogocol] svg{M256,128c0,70.7–57.3,128–128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+ \fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+ svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5–21.5,53.6–56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9–26.5,42.9–39.7c0–21.5–13.7–39.7–43.7–39.7h-23.7V172.4z}
+ svg{M88.7,56.8c0,5.5–4.5,10.1–10.1,10.1c-5.6,0–10.1–4.6–10.1–10.1c0–5.6,4.5–10.1,10.1–10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+ }
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+ \begin{tikzpicture}[yscale=-1,transform shape]
+ \pic{orcidlogo};
+ \end{tikzpicture}
+ }{|}}}}
+ 
+\usepackage{hyperref} %←- Load after everything else
+
+
+
+
+%% for new reference style of auto numbering
+\bibliographystyle{ieeetr}
+
+% color and hyper link in references 
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+
+
+
+% Set color for links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % blue  % magenta
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor=blue % blue % red
+}
+
+
+
+\usepackage{hyperref} %<--- Load after everything else
+
+%% adding color to the brackets in the references or citations 
+\makeatletter
+\renewcommand{\@cite}[2]{\textcolor{blue}{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+
+
+% Adding color to the brackets of equation number
+\makeatletter
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+\makeatother
+
+
+
+\usepackage{orcidlink}
+
+
+%% update volume and year of the publication 
+\renewcommand{\thevol}{XX}
+\renewcommand{\theyear}{20XX}
+
+
+\makeatletter
+\AtBeginDocument{\DeclareMathVersion{bold}
+\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
+\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
+\makeatother
+
+
+
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
